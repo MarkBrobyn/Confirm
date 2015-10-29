@@ -21,13 +21,29 @@ public class MainActivity extends ActionBarActivity {
 
     private void yes(){
         setContentView(R.layout.activity_main);
-        final EditText subject=(EditText) findViewById(R.id.subject);
+        EditText subject=(EditText) findViewById(R.id.subject);
         subject.setText("Yes");
+        Button cancel=(Button) findViewById(R.id.cancel);
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                confirm();
+            }
+        });
     }
+
     private void no(){
         setContentView(R.layout.activity_main);
-        final EditText subject=(EditText) findViewById(R.id.subject);
+        EditText subject=(EditText) findViewById(R.id.subject);
         subject.setText("No");
+        Button cancel=(Button) findViewById(R.id.cancel);
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                confirm();
+            }
+        });
     }
 
     public void confirm(){
@@ -49,6 +65,7 @@ public class MainActivity extends ActionBarActivity {
                     }
                 });
         alertDialog.show();
+        //alertDialog.dismiss();
     }
 
 
@@ -58,7 +75,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
 
-        final Button cancel=(Button) findViewById(R.id.cancel);
+        Button cancel=(Button) findViewById(R.id.cancel);
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
