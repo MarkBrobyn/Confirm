@@ -3,4 +3,6 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="confirm_cancel_title">Confirm cancel</string>
+    <string name="confirm_cancel_message">Please confirm cancel</string>
 </resources>

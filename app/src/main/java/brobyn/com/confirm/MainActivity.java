@@ -23,6 +23,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         EditText subject=(EditText) findViewById(R.id.subject);
         subject.setText("Yes");
+
         Button cancel=(Button) findViewById(R.id.cancel);
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,12 +31,14 @@ public class MainActivity extends ActionBarActivity {
                 confirm();
             }
         });
+
     }
 
     private void no(){
         setContentView(R.layout.activity_main);
         EditText subject=(EditText) findViewById(R.id.subject);
         subject.setText("No");
+
         Button cancel=(Button) findViewById(R.id.cancel);
 
         cancel.setOnClickListener(new View.OnClickListener() {
@@ -44,12 +47,15 @@ public class MainActivity extends ActionBarActivity {
                 confirm();
             }
         });
+
     }
 
     public void confirm(){
         AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
-        alertDialog.setTitle("Confirm cancel");
-        alertDialog.setMessage("Please confirm cancel");
+        alertDialog.setTitle(getResources().getString(R.string.confirm_cancel_title));
+        //alertDialog.setTitle("Confirm cancel");
+        alertDialog.setMessage(getResources().getString(R.string.confirm_cancel_message));
+        //alertDialog.setMessage("Please confirm cancel");
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "NO",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
